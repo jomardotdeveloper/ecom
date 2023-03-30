@@ -47,9 +47,14 @@
                                         </div>
                                     </div>
                                     <a href="{{ route('forgot') }}">Forgot Password?</a>
+                                    
                                     <div class="form-group mt-2">
                                         <button class="btn btn-lg btn-primary btn-block">Sign in</button>
                                     </div>
+                                    <center>
+
+                                        <a href="{{ route('frontend.index') }}">Go back to home</a>
+                                    </center>
                                 </form>
                             </div>
                         </div>

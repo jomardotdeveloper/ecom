@@ -12,7 +12,7 @@
                             <a href="#" class="nk-nav-toggle nk-quick-nav-icon" data-target="headerNav"><em class="icon ni ni-menu"></em></a>
                         </div>
                         <div class="nk-header-brand">
-                            <a href="html/index.html" class="logo-link">
+                            <a href="{{ route('frontend.index') }}" class="logo-link">
                                 <img class="logo-light logo-img" src="{{ asset('logo/logo.png') }}" srcset="{{ asset('logo/logo.png') }} 2x" alt="logo">
                                 <img class="logo-dark logo-img" src="{{ asset('logo/logo.png') }}" srcset="{{ asset('logo/logo.png') }} 2x" alt="logo-dark">
                             </a>
@@ -20,7 +20,7 @@
                         <div class="nk-header-menu" data-content="headerNav">
                             <div class="nk-header-mobile">
                                 <div class="nk-header-brand">
-                                    <a href="html/index.html" class="logo-link">
+                                    <a href="{{ route('frontend.index') }}" class="logo-link">
                                         <img class="logo-light logo-img" src="{{ asset('logo/logo.png') }}" srcset="{{ asset('logo/logo.png') }} 2x" alt="logo">
                                         <img class="logo-dark logo-img" src="{{ asset('logo/logo.png') }}" srcset="{{ asset('logo/logo.png') }} 2x" alt="logo-dark">
                                     </a>

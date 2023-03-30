@@ -38,7 +38,7 @@
                     </ul>
                 </div>
                 <div class="card-inner text-center">
-                    <h5 class="product-title"><a href="html/product-details.html">{{ $announcement->title }}</a></h5>
+                    <h5 class="product-title"><a href="{{ route('frontend.post', ['announcement' => $announcement]) }}">{{ $announcement->title }}</a></h5>
                 </div>
             </div>
         </div>

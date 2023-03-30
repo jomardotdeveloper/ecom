@@ -70,7 +70,7 @@
                     <ul class="product-tags">
                         <li><a href="#">{{ $product->category->name }}</a></li>
                     </ul>
-                    <h5 class="product-title"><a href="html/product-details.html">{{ $product->name }}</a></h5>
+                    <h5 class="product-title"><a href="{{ route('frontend.details', ['product' => $product]) }}">{{ $product->name }}</a></h5>
                     <div class="product-price text-primary h5"> {{ $product->price_formatted }}</div>
                 </div>
             </div>

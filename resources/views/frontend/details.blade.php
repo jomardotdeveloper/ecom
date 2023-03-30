@@ -51,6 +51,8 @@
                                 </div>
                             </li>
                             <li>
+                                @auth
+                                    
                                 <form action="{{ route('carts.store') }}" method="POST">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}" required>
@@ -58,6 +60,11 @@
                                     <button class="btn btn-primary" type="submit">Add to Cart</button>
                                 </form>
                                 
+                                @endauth
+                                @guest
+                                    
+                                <a href="{{ route('login') }}" id="buyNow" class="btn btn-primary">Add to cart</a>
+                                @endguest
                             </li>
                             <li>
                                 <a href="{{ route('frontend.checkout') }}" id="buyNow" class="btn btn-primary">Buy Now</a>
