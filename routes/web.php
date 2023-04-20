@@ -75,6 +75,7 @@ Route::get('/testroute', function() {
 // ROUTES FOR BACKEND
 Route::prefix("/admin")->middleware('auth')->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/setting', [DashboardController::class, 'setting'])->name('setting');
     Route::resource('categories', CategoryController::class);
     Route::resource('users', UserController::class);
     Route::resource('customers', CustomerController::class);

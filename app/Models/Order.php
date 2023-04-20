@@ -14,7 +14,8 @@ class Order extends Model
         'product_ids',
         'product_quantities',
         'contact',
-        'address'
+        'address',
+        'shipping_fee',
     ];
 
     public function user()
@@ -70,7 +71,7 @@ class Order extends Model
             $product = Product::find($product_id);
             $total += $product->price * $product_quantities[$key];
         }
-        return $total;
+        return $total + floatval($this->shipping_fee);
     }
 
     public function getTotalFormattedAttribute()

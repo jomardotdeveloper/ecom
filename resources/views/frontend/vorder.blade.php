@@ -56,6 +56,12 @@
                                 </td>
                             </tr>
                         @endfor
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>Shipping Fee</td>
+                            <td> {{  "₱ " . number_format($order->shipping_fee, 2) }}</td>
+                        </tr>
                     </tbody>
                     <tfoot>
                         <tr>

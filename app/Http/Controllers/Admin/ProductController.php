@@ -17,7 +17,7 @@ class ProductController extends Controller
     {
         // dd(url('frontend/special_image/1.png'));
         return view('backend.products.index', [
-            'products' => Product::all()
+            'products' => Product::where('is_archived', false)->get()
         ]);
     }
 
@@ -100,7 +100,7 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->delete();
-        return response()->json(["success" => "Product Record Deleted Successfully"],201);
+        $product->update(['is_archived' => true]);
+        return response()->json(["success" => "Product Record Archived Successfully"],201);
     }
 }

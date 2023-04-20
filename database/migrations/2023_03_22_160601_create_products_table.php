@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('price');
             $table->boolean('is_active')->default(false);
             $table->boolean('is_lubed')->default(false);
+            $table->boolean('is_archived')->default(false);
             $table->enum('type_of_switch',['clacky', 'thocky'])->default('clacky');
             $table->timestamps();
         });

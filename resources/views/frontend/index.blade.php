@@ -16,12 +16,12 @@
                         @foreach ($promotions as $promotion)
                         @if ($is_first)
                         <div class="carousel-item active">
-                            <img src="{{ $promotion->image }}" class="d-block w-100" alt="carousel">
+                            <img src="{{ $promotion->image }}" class="d-block w-100" style="height:400px!important;" alt="carousel">
                         </div>
                         @php($is_first = false)
                         @else
                         <div class="carousel-item">
-                            <img src="{{ $promotion->image }}" class="d-block w-100" alt="carousel">
+                            <img src="{{ $promotion->image }}" class="d-block w-100" style="height:400px!important;" alt="carousel">
                         </div>
                         @endif
                         @endforeach
@@ -84,7 +84,7 @@
             <div class="card card-bordered product-card">
                 <div class="product-thumb">
                     <a href="{{ route('frontend.details', ['product' => $product]) }}">
-                        <img class="card-img-top" src="{{ $product->image }}" alt="">
+                        <img class="card-img-top" src="{{ $product->image }}" alt="" style="height:300px!important;">
                     </a>
                     <ul class="product-badges">
                         {{-- <li><span class="badge bg-success">New</span></li> --}}

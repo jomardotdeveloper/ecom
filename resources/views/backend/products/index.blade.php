@@ -54,7 +54,7 @@
                         <x-datatable-action :items="[
                             array('name' => 'View', 'url' => route('products.show', $product), 'icon'=> 'icon ni ni-eye'),
                             array('name' => 'Edit', 'url' => route('products.edit', $product), 'icon'=> 'icon ni ni-pen'),
-                            array('name' => 'Delete', 
+                            array('name' => 'Archive', 
                                   'onclick' => 'deleteRecord(' . '`' . route('products.destroy', ['product' => $product]) . '`' .')', 
                                   'icon'=> 'icon ni ni-trash'),
                         ]"/>

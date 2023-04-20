@@ -17,7 +17,8 @@ class Product extends Model
         'category_id',
         'is_active',
         'is_lubed',
-        'type_of_switch'
+        'type_of_switch',
+        'is_archived'
     ];
 
     public function category()

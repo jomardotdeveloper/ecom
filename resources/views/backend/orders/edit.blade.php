@@ -17,7 +17,7 @@
 
     <div class="card card-bordered card-preview">
         <div class="card-inner">
-            <form action="{{ route('orders.update', ['order' => $order]) }}" class="row" method="POST">
+            <form action="{{ route('orders.update', ['order' => $order]) }}" class="row" method="POST" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
                 <div class="col-6">
@@ -32,7 +32,20 @@
                     <x-input name="contact" label="Contact" type="text" :is-required="true" :default-value="$order->contact"/>
                 </div>
 
-                <div class="col-6"></div>
+                <div class="col-6">
+                    <x-input name="shipping_fee" label="Shipping Fee" type="text" :is-required="true" :default-value="$order->shipping_fee"/>
+                </div>
+
+                <div class="col-6">
+                    <x-select name="is_paid" label="Is Paid" :options="[['id' => 1, 'name' => 'YES'], ['id' => 2, 'name' => 'NO']]"  :is-required="true"  :default-value="$order->payment->is_paid ? 1 : 2"/>
+                </div>
+
+                <div class="col-6">
+                    <x-input name="proof_of_payment" label="Update Proof of Payment" type="file" />
+                </div>
+
+
+                {{-- <div class="col-6"></div> --}}
 
                 <div class="col-2">
                     <div class="form-group">

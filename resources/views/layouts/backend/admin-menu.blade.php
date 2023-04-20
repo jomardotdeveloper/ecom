@@ -10,7 +10,7 @@
         <x-menu name="Products" logo="icon ni ni-card-view" url="{{ route('products.index') }}"/>
         <x-menu name="Inventory" logo="icon ni ni-layers-fill" url="{{ route('stocks.index') }}"/>
         <x-menu name="Orders" logo="icon ni ni-cc-alt2-fill" url="{{ route('orders.index') }}"/>
-        <x-menu name="Payments" logo="icon ni ni-wallet-fill" url="{{ route('payments.index') }}"/>
+        {{-- <x-menu name="Payments" logo="icon ni ni-wallet-fill" url="{{ route('payments.index') }}"/> --}}
         <x-menu name="Posts" logo="icon ni ni-blogger" url="{{ route('announcements.index') }}"/>
         
     </ul>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('product_quantities');
             $table->string('contact')->nullable();
             $table->string('address')->nullable();
+            $table->string('shipping_fee')->default('0');
             $table->timestamps();
         });
     }

@@ -60,7 +60,7 @@
             <div class="card card-bordered product-card">
                 <div class="product-thumb">
                     <a href="{{ route('frontend.details', ['product' => $product]) }}">
-                        <img class="card-img-top" src="{{ $product->image }}" alt="">
+                        <img class="card-img-top" src="{{ $product->image }}" alt="" >
                     </a>
                     <ul class="product-badges">
                         {{-- <li><span class="badge bg-success">New</span></li> --}}

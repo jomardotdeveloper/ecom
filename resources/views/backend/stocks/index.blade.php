@@ -19,10 +19,11 @@
     {{-- DATA TABLE --}}
     <div class="card card-bordered card-preview">
         <div class="card-inner">
-            <table class="datatable-init nk-tb-list nk-tb-ulist" data-auto-responsive="false">
+            <table class="datatable-init-export nowrap table" data-export-title="Export">
                 {{-- HEAD --}}
                 <thead>
                     <tr class="nk-tb-item nk-tb-head">
+                        {{-- <th class="nk-tb-col"><span class="sub-text">ID</span></th> --}}
                         <th class="nk-tb-col"><span class="sub-text">Product</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Quantity</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Operation Type</span></th>
@@ -34,6 +35,9 @@
                 <tbody>
                     @foreach ($stocks as $stock)
                     <tr class="nk-tb-item">
+                        {{-- <td class="nk-tb-col">
+                            {{ $stock->id }}
+                        </td> --}}
                         <td class="nk-tb-col">
                             {{ $stock->product->name }}
                         </td>
@@ -56,7 +60,12 @@
                                 $actions = [];
                             }
                         ?>
+                        @if ($stock->is_validated)
+                        <td class="nk-tb-col nk-tb-col-tools p-2"></td>
+                        @else
                         <x-datatable-action :items="$actions"/>
+                        @endif
+                       
                     </tr>
                     @endforeach
                 </tbody>
@@ -66,3 +75,6 @@
     {{-- END OF DATATABLE --}}
 </div>
 @endsection
+@push('scripts')
+<script src="{{ asset('backend/assets/js/libs/datatable-btns.js?ver=3.0.0') }}"></script>
+@endpush

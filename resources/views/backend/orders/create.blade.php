@@ -17,7 +17,7 @@
 
     <div class="card card-bordered card-preview">
         <div class="card-inner">
-            <form action="{{ route('orders.store') }}" class="row" method="POST">
+            <form action="{{ route('orders.store') }}" class="row" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="col-6">
                     <x-select name="user_id" label="Customer" :options="$customers"  :is-required="true"/>
@@ -31,7 +31,20 @@
                     <x-input name="contact" label="Contact" type="text" :is-required="true"/>
                 </div>
 
-                <div class="col-6"></div>
+                <div class="col-6">
+                    <x-input name="shipping_fee" label="Shipping Fee" type="text" :is-required="true" :default-value="$shipping_fee"/>
+                </div>
+
+                
+                <div class="col-6">
+                    <x-select name="is_paid" label="Is Paid" :options="[['id' => 1, 'name' => 'YES'], ['id' => 2, 'name' => 'NO']]"  :is-required="true"/>
+                </div>
+
+                <div class="col-6">
+                    <x-input name="proof_of_payment" label="Proof of Payment" type="file" />
+                </div>
+
+                {{-- <div class="col-6"></div> --}}
 
                 <div class="col-2">
                     <div class="form-group">

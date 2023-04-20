@@ -11,6 +11,24 @@
     <x-datatable-head title="Dashboard" description=""/>
 
     <div class="row g-gs">
+        @foreach ($low_on_stock_products as $prod)
+        <div class="example-alert">
+            <div class="alert alert-danger alert-icon alert-dismissible">
+                <em class="icon ni ni-cross-circle"></em> <strong>Warning</strong>! {{ $prod->name }} is running out of stock <button class="close" data-bs-dismiss="alert"></button>
+            </div>
+        </div>
+        @endforeach
+        <div class="col-xxl-4 col-md-4">
+            <form class="row" method="POST" action="{{ route('setting') }}">
+                @csrf
+                <div class="col-10">
+                    <x-input name="default_shipping_fee" label="Default Shipping Fee" type="text" :default-value="$default_shipping_fee" :is-required="true"/>
+                </div>
+                <div class="col-2" style="margin-top:2rem;">
+                    <input type="submit" value="Save Changes" class="btn btn-sm btn-primary" />
+                </div>
+            </form>
+        </div>
         <div class="col-xxl-12 col-md-12">
             <div class="card h-100">
                 <div class="card-inner">

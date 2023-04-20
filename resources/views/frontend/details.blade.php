@@ -39,6 +39,10 @@
                                 <div class="fs-14px text-muted">Available Stocks</div>
                                 <div class="fs-16px fw-bold text-secondary">{{ $product->stocks_total}}</div>
                             </li>
+                            <li>
+                                <div class="fs-14px text-muted">Shipping Fee</div>
+                                <div class="fs-16px fw-bold text-secondary">{{ $shipping_fee}}</div>
+                            </li>
                         </ul>
                     </div>
                     <div class="product-meta">
@@ -67,7 +71,13 @@
                                 @endguest
                             </li>
                             <li>
+                                @auth
                                 <a href="{{ route('frontend.checkout') }}" id="buyNow" class="btn btn-primary">Buy Now</a>
+                                @endauth
+                                @guest
+                                    
+                                <a href="{{ route('login') }}" id="buyNow" class="btn btn-primary">Buy Now</a>
+                                @endguest
                             </li>
                         </ul>
                     </div>

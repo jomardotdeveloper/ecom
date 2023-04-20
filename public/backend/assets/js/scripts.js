@@ -536,6 +536,7 @@
       responsive: {
         details: true
       },
+      order: [],
       buttons: ['copy', 'excel', 'csv', 'pdf']
     });
     $.fn.DataTable.ext.pager.numbers_length = 7;

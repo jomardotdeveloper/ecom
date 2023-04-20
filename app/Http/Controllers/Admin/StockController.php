@@ -14,8 +14,9 @@ class StockController extends Controller
      */
     public function index()
     {
+        // dd(Stock::orderBy('created_at', 'desc')->get());
         return view('backend.stocks.index', [
-            'stocks' => Stock::all()
+            'stocks' => Stock::orderBy('id', 'desc')->get()->all()
         ]);
     }
 
@@ -25,7 +26,7 @@ class StockController extends Controller
     public function create()
     {
         return view('backend.stocks.create', [
-            'products' => $this->getSelectOptions(Product::class)
+            'products' => $this->getSelectOptions(Product::class, col_filter : Product::where('is_archived', false)->get())
         ]);
     }
 

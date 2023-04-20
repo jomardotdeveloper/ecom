@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\Order;
 use App\Models\Payment;
 use App\Models\Product;
+use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -48,7 +49,8 @@ class FrontendController extends Controller
     public function details(Product $product)
     {
         return view('frontend.details', [
-            'product' => $product
+            'product' => $product,
+            'shipping_fee' => "₱ " . number_format(Setting::first()->default_shipping_fee, 2)
         ]);
     }
 
@@ -124,7 +126,9 @@ class FrontendController extends Controller
     public function checkout()
     {
         if(!isset($_GET['product_id']) || !isset($_GET['quantity'])) {
-            abort(404);
+            return back()->withErrors([
+                'error' => 'No quantity is set',
+            ]);
         }
 
 
@@ -166,7 +170,7 @@ class FrontendController extends Controller
 
         $values["product_ids"] = implode(",", $product_ids);
         $values["product_quantities"] = implode(",", $quantities);
-
+        $values['shipping_fee'] = Setting::first()->default_shipping_fee;
         $order = Order::create($values);
 
 

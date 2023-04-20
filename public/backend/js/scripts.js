@@ -445,15 +445,17 @@
         NioApp.DataTable('.datatable-init', {
             responsive: {
                 details: true
-            }
+            },
+            // order : [[ 0, "desc" ]] ,
         });
 
-        NioApp.DataTable('.datatable-init-export', {
-            responsive: {
-                details: true
-            },
-            buttons: ['copy', 'excel', 'csv', 'pdf']
-        });
+        // NioApp.DataTable('.datatable-init-export', {
+        //     responsive: {
+        //         details: true
+        //     },
+        //     order: [[0, 'desc']],
+        //     buttons: ['excel', 'csv', 'pdf']
+        // });
         $.fn.DataTable.ext.pager.numbers_length = 7;
     }
 

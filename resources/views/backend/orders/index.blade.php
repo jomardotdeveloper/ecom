@@ -28,6 +28,7 @@
                         <th class="nk-tb-col"><span class="sub-text">Date</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Status</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Total</span></th>
+                        <th class="nk-tb-col"><span class="sub-text">Proof of Payment</span></th>
                         <th class="nk-tb-col nk-tb-col-tools text-end">
                         </th>
                     </tr>
@@ -50,6 +51,13 @@
                         </td>
                         <td class="nk-tb-col">
                             {{ $order->total_formatted }}
+                        </td>
+                        <td class="nk-tb-col">
+                            @if ($order->payment->proof_of_payment)
+                                <a href="{{ $order->payment->proof_of_payment }}" class="btn btn-primary" target="_blank">View</a>
+                            @else
+                                <span>No proof of payment</span>
+                            @endif
                         </td>
                         <x-datatable-action :items="[
                             array('name' => 'View', 'url' => route('orders.show', $order), 'icon'=> 'icon ni ni-eye'),
