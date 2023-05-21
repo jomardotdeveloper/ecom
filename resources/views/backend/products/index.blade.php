@@ -27,7 +27,7 @@
                         <th class="nk-tb-col"><span class="sub-text">Category</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Price</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Active</span></th>
-                        <th class="nk-tb-col"><span class="sub-text">Stock</span></th>
+                        {{-- <th class="nk-tb-col"><span class="sub-text">Stock</span></th> --}}
                         <th class="nk-tb-col nk-tb-col-tools text-end">
                         </th>
                     </tr>
@@ -48,9 +48,9 @@
                         <td class="nk-tb-col">
                             {{ $product->is_active ? 'Yes' : 'No' }}
                         </td>
-                        <td class="nk-tb-col">
+                        {{-- <td class="nk-tb-col">
                             {{ $product->stocks_total }}
-                        </td>
+                        </td> --}}
                         <x-datatable-action :items="[
                             array('name' => 'View', 'url' => route('products.show', $product), 'icon'=> 'icon ni ni-eye'),
                             array('name' => 'Edit', 'url' => route('products.edit', $product), 'icon'=> 'icon ni ni-pen'),

@@ -11,14 +11,14 @@
     <x-datatable-head title="Dashboard" description=""/>
 
     <div class="row g-gs">
-        @foreach ($low_on_stock_products as $prod)
+        {{-- @foreach ($low_on_stock_products as $prod)
         <div class="example-alert">
             <div class="alert alert-danger alert-icon alert-dismissible">
                 <em class="icon ni ni-cross-circle"></em> <strong>Warning</strong>! {{ $prod->name }} is running out of stock <button class="close" data-bs-dismiss="alert"></button>
             </div>
         </div>
-        @endforeach
-        <div class="col-xxl-4 col-md-4">
+        @endforeach --}}
+        {{-- <div class="col-xxl-4 col-md-4">
             <form class="row" method="POST" action="{{ route('setting') }}">
                 @csrf
                 <div class="col-10">
@@ -28,7 +28,7 @@
                     <input type="submit" value="Save Changes" class="btn btn-sm btn-primary" />
                 </div>
             </form>
-        </div>
+        </div> --}}
         <div class="col-xxl-12 col-md-12">
             <div class="card h-100">
                 <div class="card-inner">
@@ -40,7 +40,7 @@
                     <ul class="nk-store-statistics">
                         <li class="item">
                             <div class="info">
-                                <div class="title">Orders</div>
+                                <div class="title">Reservations</div>
                                 <div class="count">{{ $number_of_orders }}</div>
                             </div>
                             <em class="icon bg-primary-dim ni ni-bag"></em>
@@ -54,7 +54,7 @@
                         </li>
                         <li class="item">
                             <div class="info">
-                                <div class="title">Products</div>
+                                <div class="title">Items</div>
                                 <div class="count">{{ $number_of_products }}</div>
                             </div>
                             <em class="icon bg-pink-dim ni ni-box"></em>

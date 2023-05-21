@@ -10,7 +10,7 @@
     
 
     {{-- TITLE --}}
-    <x-datatable-head title="Edit Order" />
+    <x-datatable-head title="Edit Reservation" />
 
     {{-- ALERTS --}}
     @include('backend.includes.alerts')
@@ -32,9 +32,9 @@
                     <x-input name="contact" label="Contact" type="text" :is-required="true" :default-value="$order->contact"/>
                 </div>
 
-                <div class="col-6">
+                {{-- <div class="col-6">
                     <x-input name="shipping_fee" label="Shipping Fee" type="text" :is-required="true" :default-value="$order->shipping_fee"/>
-                </div>
+                </div> --}}
 
                 <div class="col-6">
                     <x-select name="is_paid" label="Is Paid" :options="[['id' => 1, 'name' => 'YES'], ['id' => 2, 'name' => 'NO']]"  :is-required="true"  :default-value="$order->payment->is_paid ? 1 : 2"/>
@@ -114,7 +114,7 @@
 
 
 {{-- INVOICE CREATE MODAL --}}
-<x-modal id="order-line-create-modal" title="Add Product" footer="Order">
+<x-modal id="order-line-create-modal" title="Add Product" footer="Reservation">
     <form action="#" class="row" method="POST">
         <div class="col-12">
             <x-select name="product_id" label="Product" :options="$products" />

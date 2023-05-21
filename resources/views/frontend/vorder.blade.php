@@ -19,9 +19,9 @@
                 </div>
             </div>
             <div class="invoice-desc">
-                <h3 class="title">Order</h3>
+                <h3 class="title">Reservation</h3>
                 <ul class="list-plain">
-                    <li class="invoice-id"><span>Order #</span>: {{ $order->formatted_id }}<span></span></li>
+                    <li class="invoice-id"><span>Reservation #</span>: {{ $order->formatted_id }}<span></span></li>
                     <li class="invoice-date"><span>Due Date</span>: {{ $order->created_at->format('d M Y') }}<span></span></li>
                 </ul>
             </div>
@@ -56,12 +56,12 @@
                                 </td>
                             </tr>
                         @endfor
-                        <tr>
+                        {{-- <tr>
                             <td></td>
                             <td></td>
                             <td>Shipping Fee</td>
                             <td> {{  "₱ " . number_format($order->shipping_fee, 2) }}</td>
-                        </tr>
+                        </tr> --}}
                     </tbody>
                     <tfoot>
                         <tr>

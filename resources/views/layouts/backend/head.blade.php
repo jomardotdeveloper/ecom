@@ -7,7 +7,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="{{ asset('logo/logo.png') }}">
     <!-- Page Title  -->
-    <title>ECommerce</title>
+    <title>Online Reservation Event Needs </title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="{{ asset('backend/assets/css/dashlite.css?ver=3.0.0') }}">
     <link id="skin-default" rel="stylesheet" href="{{ asset('backend/assets/css/theme.css?ver=3.0.0') }}">

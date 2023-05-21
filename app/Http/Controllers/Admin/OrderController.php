@@ -85,7 +85,7 @@ class OrderController extends Controller
             'is_paid' =>  $values['is_paid'],
             'proof_of_payment' => array_key_exists('proof_of_payment', $values) ? $values['proof_of_payment'] : null ,
         ]);
-        return redirect()->route('orders.index')->with('success', 'Order created successfully.');
+        return redirect()->route('orders.index')->with('success', 'Reservation created successfully.');
     }   
 
     /**
@@ -155,9 +155,9 @@ class OrderController extends Controller
         $order->payment->update([
             'amount' => $order->total,
             'is_paid' =>  $values['is_paid'],
-            'proof_of_payment' => array_key_exists('proof_of_payment', $values) ? $values['proof_of_payment'] : null ,
+            // 'proof_of_payment' => array_key_exists('proof_of_payment', $values) ? $values['proof_of_payment'] : null ,
         ]);
-        return redirect()->route('orders.index')->with('success', 'Order updated successfully.');
+        return redirect()->route('orders.index')->with('success', 'Reservation updated successfully.');
     }
 
     /**
@@ -166,6 +166,6 @@ class OrderController extends Controller
     public function destroy(Order $order)
     {
         $order->delete();
-        return response()->json(["success" => "Order Record Deleted Successfully"],201);
+        return response()->json(["success" => "Reservation Record Deleted Successfully"],201);
     }
 }

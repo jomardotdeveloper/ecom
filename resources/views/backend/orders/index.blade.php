@@ -4,11 +4,11 @@
     {{-- BREADCRUMB --}}
     <x-breadcrumb :items="[
         array('name' => 'MAIN', 'url' => 'javascript:void(0);'),
-        array('name' => 'Orders', 'url' => '#'),
+        array('name' => 'Reservations', 'url' => '#'),
     ]"/>
 
     {{-- TITLE --}}
-    <x-datatable-head title="Orders" description="You have {{ count($orders) }} orders"/>
+    <x-datatable-head title="Reservations" description="You have {{ count($orders) }} orders"/>
     
     {{-- ALERTS --}}
     @include('backend.includes.alerts')
@@ -19,11 +19,11 @@
     {{-- DATA TABLE --}}
     <div class="card card-bordered card-preview">
         <div class="card-inner">
-            <table class="datatable-init nk-tb-list nk-tb-ulist" data-auto-responsive="false">
+            <table class="datatable-init-export nowrap table" data-export-title="Export">
                 {{-- HEAD --}}
                 <thead>
                     <tr class="nk-tb-item nk-tb-head">
-                        <th class="nk-tb-col"><span class="sub-text">Order #</span></th>
+                        <th class="nk-tb-col"><span class="sub-text">Reservation #</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Customer</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Date</span></th>
                         <th class="nk-tb-col"><span class="sub-text">Status</span></th>
@@ -75,3 +75,6 @@
     {{-- END OF DATATABLE --}}
 </div>
 @endsection
+@push('scripts')
+<script src="{{ asset('backend/assets/js/libs/datatable-btns.js?ver=3.0.0') }}"></script>
+@endpush

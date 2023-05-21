@@ -1,6 +1,6 @@
 @extends("layouts.frontend.master")
 @section("content")
-<x-datatable-head title="Order" description="You have {{ count($orders) }} orders"/>
+<x-datatable-head title="Reservation" description="You have {{ count($orders) }} orders"/>
 @include('backend.includes.alerts')
 <div class="card card-bordered card-preview">
     <div class="card-inner">
@@ -8,7 +8,7 @@
             {{-- HEAD --}}
             <thead>
                 <tr class="nk-tb-item nk-tb-head">
-                    <th class="nk-tb-col"><span class="sub-text">Order #</span></th>
+                    <th class="nk-tb-col"><span class="sub-text">Reservation #</span></th>
                     <th class="nk-tb-col"><span class="sub-text">Customer</span></th>
                     <th class="nk-tb-col"><span class="sub-text">Date</span></th>
                     <th class="nk-tb-col"><span class="sub-text">Status</span></th>

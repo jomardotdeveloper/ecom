@@ -59,7 +59,7 @@ Route::get('/terms', [FrontendController::class, 'terms'])->name('frontend.terms
 Route::get('/register', [FrontendController::class, 'register'])->name('frontend.register');
 Route::post('/register', [FrontendController::class, 'createAccount'])->name('frontend.create-account');
 Route::get('/personalized', [FrontendController::class, 'personalized'])->name('frontend.personalized');
-
+Route::get('/qr/{id}', [FrontendController::class, 'qr'])->name('frontend.qr');
 Route::resource('carts', CartController::class);
 Route::get('/testroute', function() {
     $details = [

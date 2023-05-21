@@ -21,7 +21,7 @@
                 @csrf
                 
                 <div class="col-6">
-                    <x-select name="order_id" label="Order" :options="$orders"  :is-required="true"/>
+                    <x-select name="order_id" label="Reservation" :options="$orders"  :is-required="true"/>
                 </div>
 
                 <div class="col-6">

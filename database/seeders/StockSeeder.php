@@ -13,19 +13,19 @@ class StockSeeder extends Seeder
      */
     public function run(): void
     {
-        $stocks = [];
+        // $stocks = [];
 
-        foreach(Product::all() as $product) {
-            $stocks[] = [
-                'product_id' => $product->id,
-                'quantity' => 10,
-                'is_validated' => true,
-                'is_return' => false
-            ];
-        }
+        // foreach(Product::all() as $product) {
+        //     $stocks[] = [
+        //         'product_id' => $product->id,
+        //         'quantity' => 10,
+        //         'is_validated' => true,
+        //         'is_return' => false
+        //     ];
+        // }
 
-        foreach ($stocks as $stock) {
-            \App\Models\Stock::create($stock);
-        }
+        // foreach ($stocks as $stock) {
+        //     \App\Models\Stock::create($stock);
+        // }
     }
 }

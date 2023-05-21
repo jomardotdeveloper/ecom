@@ -46,7 +46,7 @@
                                             <input type="password" class="form-control form-control-lg" id="password" name="password" placeholder="Enter your password" required>
                                         </div>
                                     </div>
-                                    <a href="{{ route('forgot') }}">Forgot Password?</a>
+                                    {{-- <a href="{{ route('forgot') }}">Forgot Password?</a> --}}
                                     
                                     <div class="form-group mt-2">
                                         <button class="btn btn-lg btn-primary btn-block">Sign in</button>

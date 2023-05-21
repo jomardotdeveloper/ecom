@@ -194,7 +194,12 @@ class FrontendController extends Controller
                 'is_active' => false
             ]);
         }
-        return redirect()->route('frontend.order')->with('success', 'Order successfully placed!');
+        return redirect()->route('frontend.qr', ['id' => $order->id])->with('success', 'Reservation successfully placed!');
     }
     
+
+    public function qr($id)
+    {
+        return view('frontend.qr', compact('id'));
+    }
 }

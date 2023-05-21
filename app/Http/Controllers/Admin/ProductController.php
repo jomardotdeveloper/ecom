@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Stock;
 use Faker\Core\File;
 use Illuminate\Http\Request;
 
@@ -49,6 +50,13 @@ class ProductController extends Controller
         
         $values['image'] = $this->uploadImage($request, 'image', 'products');
         $product = Product::create($values);
+        $stock = Stock::create([
+            'product_id' => $product->id,
+            'quantity' => 999999,
+            'is_validated' => true,
+            'is_return' => false
+        ]);
+        
         return redirect()->route('products.index')->with('success', 'Product created successfully');
     }
 

@@ -32,10 +32,10 @@
                             <ul class="nk-menu nk-menu-main ui-s2">
                                 <li class="nk-menu-item">
                                     <a href="{{ route('frontend.index') }}" class="nk-menu-link">
-                                        <span class="nk-menu-text">Products</span>
+                                        <span class="nk-menu-text">Items</span>
                                     </a>
                                 </li>
-                                <li class="nk-menu-item">
+                                {{-- <li class="nk-menu-item">
                                     <a href="{{ route('frontend.personalized') }}" class="nk-menu-link">
                                         <span class="nk-menu-text">Personalized</span>
                                     </a>
@@ -49,7 +49,7 @@
                                     <a href="{{ route('frontend.terms') }}" class="nk-menu-link">
                                         <span class="nk-menu-text">Terms & Conditions</span>
                                     </a>
-                                </li>
+                                </li> --}}
                                 @auth
                                 <li class="nk-menu-item">
                                     <a href="{{ route('carts.index') }}" class="nk-menu-link">
@@ -58,7 +58,7 @@
                                 </li>
                                 <li class="nk-menu-item">
                                     <a href="{{ route('frontend.order') }}" class="nk-menu-link">
-                                        <span class="nk-menu-text">Orders</span>
+                                        <span class="nk-menu-text">Reservation</span>
                                     </a>
                                 </li>
                                 @endauth

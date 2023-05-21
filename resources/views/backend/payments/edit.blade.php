@@ -22,7 +22,7 @@
                 @method('PUT')
                 
                 <div class="col-6">
-                    <x-select name="order_id" label="Order" :options="$orders"  :is-required="true" :default-value="$payment->order_id"/>
+                    <x-select name="order_id" label="Reservation" :options="$orders"  :is-required="true" :default-value="$payment->order_id"/>
                 </div>
 
                 <div class="col-6">
