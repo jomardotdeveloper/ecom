@@ -108,8 +108,9 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        $product->update(['is_archived' => true]);
-        $product->update(['is_active' => true]);
+        $product->delete();
+        // $product->update(['is_archived' => true]);
+        // $product->update(['is_active' => true]);
         return response()->json(["success" => "Product Record Archived Successfully"],201);
     }
 }
