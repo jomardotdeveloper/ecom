@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\Stock;
 use Faker\Core\File;
@@ -108,6 +109,14 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
+
+        $reservations = Order::all();
+        foreach($reservations as $reservation){
+            if(in_array($product->id, $reservation->product_ids_arr)){
+                $reservation->delete();
+            }
+        }
+
         $product->delete();
         // $product->update(['is_archived' => true]);
         // $product->update(['is_active' => true]);
